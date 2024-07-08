@@ -6,7 +6,7 @@ from tkinter import messagebox
 def show_info(output_path):
     root = tk.Tk()
     root.withdraw()  # Oculta la ventana principal
-    messagebox.showinfo("Información", f"Proceso completado. Archivo guardado como '{output_path}'.")
+    messagebox.showinfo("Documento Convertido", f"Proceso completado. Archivo guardado como '{output_path}'.")
 
 # Llama a la función con la ruta de tu archivo
 output_path = "ruta/al/archivo.txt"
