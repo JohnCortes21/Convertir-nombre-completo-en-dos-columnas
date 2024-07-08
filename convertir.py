@@ -3,15 +3,17 @@ import os
 import tkinter as tk
 from tkinter import messagebox
 
-
 def show_info(output_path):
     root = tk.Tk()
     root.withdraw()  # Oculta la ventana principal
-    messagebox.showinfo("Información", f"Proceso completado. Archivo guardado como Nombres_divididos '{output_path}'.")
+    messagebox.showinfo("Información", f"Proceso completado. Archivo guardado como '{output_path}'.")
 
 # Llama a la función con la ruta de tu archivo
 output_path = "ruta/al/archivo.txt"
 show_info(output_path)
+
+# Proporciona la ruta completa al archivo Excel
+file_path = 'C:/Users/ADMIN/OneDrive - 816006449_LA INTEGRIDAD S.A/Escritorio/nombres.xlsx'
 
 try:
     # Cargar el archivo Excel
@@ -30,6 +32,8 @@ try:
     # Guardar el resultado en un nuevo archivo Excel
     output_path = 'C:/Users/ADMIN/OneDrive - 816006449_LA INTEGRIDAD S.A/Escritorio/nombres_divididos.xlsx'
     df.to_excel(output_path, index=False)
+
+    print(f"Proceso completado. Archivo guardado como '{output_path}'.")
 
 except FileNotFoundError:
     print(f"El archivo {file_path} no se encuentra.")
